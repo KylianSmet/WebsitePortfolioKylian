@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio - Data</title>
+  <style>
+    /* ========== Algemeen ========== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Inter", sans-serif;
+    }
+
+    html, body {
+      height: 100%;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* ========== Achtergrond ========== */
+    .background-layer {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      background: linear-gradient(135deg, #C27071 0%, #000000 100%);
+      background-blend-mode: overlay;
+      background-size: cover;
+      animation: moveBg 20s ease-in-out infinite alternate;
+    }
+
+    @keyframes moveBg {
+      0% { background-position: 0% 0%; }
+      100% { background-position: 100% 100%; }
+    }
+
+    /* ========== Pagina ========== */
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ========== Navigatie ========== */
+    .nav {
+      background-color: #C27071;
+      padding: 25px;
+      display: flex;
+      justify-content: end;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-list {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-list a {
+      text-decoration: none;
+      background-color: #F9CACC;
+      color: rgb(0, 0, 0);
+      padding: 10px 20px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-list a:hover {
+      background-color: #c59e9e;
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    /* ========== Inhoud ========== */
+    .container {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 16px;
+    }
+
+    .intro {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .intro-text {
+      color: white;
+      flex: 1 1 50%;
+    }
+
+    .intro img {
+      width: 100%;
+      max-width: 400px;
+      object-fit: cover;
+      flex: 1 1 40%;
+      border-radius: 8px;
+      transition: transform 0.4s ease;
+    }
+
+    .intro img:hover {
+      transform: scale(1.03);
+    }
+
+    h2 {
+      color: white;
+      text-align: center;
+      font-style: italic;
+      margin: 40px 0 20px;
+    }
+
+    /* ========== Charts Sectie ========== */
+    .chart-section {
+      background-color: #C27071;
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+      padding: 20px 0;
+    }
+
+    .chart-row {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      padding: 0 20px;
+    }
+
+    .chart-row img {
+      width: 40%;
+      max-width: 400px;
+      height: auto;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .chart-row img:hover {
+      transform: scale(1.02);
+    }
+
+    .chart-row::-webkit-scrollbar {
+      display: none;
+    }
+
+    .icon-strip {
+      width: 100%;
+      margin: 30px 0;
+    }
+
+    .icon-strip img {
+      width: 100%;
+      display: block;
+      border-radius: 8px;
+      padding: 0 8px;
+    }
+
+    .quote-section {
+      background-color: #C27071;
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+      padding: 40px 20px;
+      margin-top: auto;
+      margin-bottom: 0;
+    }
+
+    .quote {
+      text-align: center;
+      color: white;
+      font-style: italic;
+      font-size: 18px;
+      margin: 0;
+    }
+
+    .footer {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .footer-text {
+      color: #ffffff;
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    .passion-section img {
+      max-width: 300px;
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .passion-section {
+      gap: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 12px;
+      }
+
+      .intro {
+        flex-direction: column;
+        text-align: center;
+        padding: 0;
+      }
+
+      .intro img {
+        margin-bottom: 2rem;
+      }
+
+      .intro-text {
+        width: 100%;
+        max-width: 100%;
+        text-align: center;
+        margin-top: -20px;
+        padding: 0 10px;
+      }
+
+      .chart-row {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 12px;
+      }
+
+      .chart-row img {
+        width: 100%;
+        max-width: 100%;
+      }
+
+      .icon-strip img {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 8px;
+      }
+
+      .passion-section img {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="background-layer"></div>
+  <div class="mouse-glow"></div>
+  <div class="page">
+    <nav class="nav">
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="container">
+      <div class="intro">
+        <img src="img/mezelf 2.jpg" alt="Profielfoto" />
+        <div class="intro-text">
+          <p>Hi! Ik ben Kylian Smet: een designer met een oog voor detail, een liefde voor visueel design, en een passie voor creativiteit en data.</p><br>
+          <p>Mijn doel is om te groeien in de wereld van visueel design en communicatie, en ik wil me blijven ontwikkelen binnen de creatieve sector.</p><br>
+          <p>Ik geloof in de kracht van design als middel om verhalen te vertellen, ideeën over te brengen en mensen te inspireren.</p><br>
+          <p>Of het nu gaat om branding, grafische vormgeving, illustratie of datavisualisatie, ik werk met enthousiasme aan elk project.</p><br>
+          <p>Benieuwd naar mijn werk of interesse in een samenwerking? Bekijk gerust mijn portfolio hieronder of neem contact op.</p>
+        </div>
+      </div>
+
+      <div class="intro passion-section">
+        <div class="intro-text">
+          <p>Mijn passie voor grafisch ontwerp begon al op jonge leeftijd, toen ik uren doorbracht met tekenen en experimenteren met kleuren en vormen.</p><br>
+          <p>Later ontdekte ik digitale tools zoals Photoshop en Illustrator, waarmee ik mijn creativiteit naar een nieuw niveau kon tillen.</p><br>
+          <p>Wat mij het meest inspireert, is hoe visueel design emoties kan oproepen en verhalen kan vertellen zonder woorden.</p><br>
+          <p>Vandaag combineer ik die fascinatie met mijn oog voor detail om projecten te maken die zowel esthetisch als functioneel zijn.</p>
+        </div>
+        <img src="img/f12b8b260ecb65de10fb7e1fb1162fc6.jpg" alt="Passie voor design" />
+      </div>
+
+      <h2>Mijn eigen data-set</h2>
+
+      <div class="chart-section chart-full-width">
+        <div class="chart-row">
+          <img src="img/ochtendroutine_bovenste3_300dpi.png" alt="Grafiek Links">
+          <img src="img/ochtendroutine_visualisaties_klein_300dpi.png" alt="Grafiek Rechts">
+        </div>
+      </div>
+
+      <div class="icon-strip">
+        <img src="img/afgewerkte iconen kleuren.png" alt="Iconen strip">
+      </div>
+
+      <div class="quote-section">
+        <p class="quote">Design shapes the world, discipline shapes the self.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p class="footer-text">© 2025 Kylian Smet. Alle rechten voorbehouden.</p>
+  </footer>
+</body>
+</html>

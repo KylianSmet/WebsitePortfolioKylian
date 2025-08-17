@@ -1,0 +1,145 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+    background-color: #fddfe0
+    ;
+}
+
+.button {
+    text-decoration: none;
+    color: #fff;
+    background-color: #F9CACC;
+    padding: 1rem 1.5rem;
+    outline: none;
+    border: none;
+    width: fit-content;
+    font-size: 1rem;
+    font-family: "Inter", sans-serif;
+    cursor: pointer;
+}
+
+.nav {
+    background-color: #C27071;
+    padding: 20px;
+    display: flex;
+    justify-content: end;
+    text-decoration: none;
+  }
+
+  .nav-list {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    text-decoration: none;
+  }
+
+  .nav-list a {
+    text-decoration: none;
+    background-color: #F9CACC;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    
+    font-weight: bold;
+  }
+
+  .nav-list a:hover {
+    background-color: #c59e9e;
+    text-decoration: none;
+  }
+
+
+.hero {
+    padding: 4rem 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.hero-img {
+    object-fit: cover;
+    width: 25rem;
+    height: 100%;
+
+    @media (max-width: 576px) {
+        width: 80%;
+        height: 80%;
+    }
+}
+
+.contact {
+    background-color:#C27071;
+    padding: 4rem 0;
+    margin: 1rem 0;
+}
+
+.contact-text-align {
+    text-align: center;
+    color: #fff;
+    margin: 0 1rem;
+}
+
+.contact-text {
+    color: #fff;
+    margin: 0;
+}
+
+.contact-list-flex {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.contact-list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 0;
+    padding-left: 0;
+}
+
+.contact-banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.contact-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20rem;
+
+    @media (max-width: 992px) {
+        gap: 5rem;
+    }
+    
+    @media (max-width: 768px) {
+        flex-direction: column-reverse;
+        gap: 2rem;
+    }
+}
+
+.contact-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.footer {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.footer-text {
+    color: #C27071;
+    margin: 0;
+}
